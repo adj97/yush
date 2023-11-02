@@ -2,8 +2,20 @@
 
 export default function Home() {
 
-  const buttonClick = () => {
-    console.log("Hey! you clicked the button")
+  const buttonClick = async () => {
+
+    let results = await fetch("http://localhost:4000/api", {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: `query { hello }`
+      }),
+    });
+
+    console.log(results);
   }
   return (
     <main>
