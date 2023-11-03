@@ -4,6 +4,9 @@ const schema = require('./schema/schema');
 
 const app = express();
 
+const cors = require('cors');
+app.use(cors());
+
 app.get('/', (req, res) => {
     res.send('Hello World! The API is at /api')
 });

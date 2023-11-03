@@ -4,18 +4,19 @@ export default function Home() {
 
   const buttonClick = async () => {
 
-    let results = await fetch("http://localhost:4000/api", {
+    await fetch("http://localhost:4000/api", {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         query: `query { hello }`
       }),
-    });
-
-    console.log(results);
+    }).then(
+      data => data.json()
+    ).then(
+      data => console.log(data)
+    );
   }
   return (
     <main>
