@@ -1,15 +1,9 @@
-const gql = require('graphql');
+import gql from 'graphql';
 
-const QueryRoot = new gql.GraphQLObjectType({
-    name: 'Query',
-    fields: () => ({
-        hello: {
-            type: gql.GraphQLString,
-            resolve: () => "Hello world!"
-        }
-    })
-})
+import { queryRoot } from './queryRoot.js';
+import { mutationRoot } from './mutationRoot.js';
 
-module.exports = new gql.GraphQLSchema({
-    query: QueryRoot
+export const schema = new gql.GraphQLSchema({
+    query: queryRoot,
+    mutation: mutationRoot
 });

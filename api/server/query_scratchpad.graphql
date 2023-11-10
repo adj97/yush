@@ -1,0 +1,9 @@
+query {
+  hello
+}
+
+mutation recipe($title: String!) {
+  recipe(title: $title){
+    title
+  }
+}

@@ -1,6 +1,7 @@
 {
   "name": "yushi-api",
   "version": "0.1.0",
+  "type":"module",
   "description": "",
   "main": "server/api.js",
   "scripts": {

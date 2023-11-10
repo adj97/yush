@@ -1,14 +1,14 @@
-const express = require('express');
-const graphqlHTTP = require('express-graphql').graphqlHTTP;
-const schema = require('./schema/schema');
+import express from 'express';
+import { graphqlHTTP } from 'express-graphql';
+import { schema } from './schema/schema.js';
 
 const app = express();
 
-const cors = require('cors');
+import cors from 'cors';
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello World! The API is at /api')
+    res.send('Hello World! The API is at <a href="/api">/api</a>')
 });
 
 app.use('/api', graphqlHTTP({
